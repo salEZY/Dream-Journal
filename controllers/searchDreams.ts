@@ -12,8 +12,10 @@ const searchDreams = async (req: Request, res: Response) => {
     filter["title"] = { $regex: regexSearch };
   }
   if (type) filter["type"] = req.query["type"];
-  if (from && to) {
-    filter["date"] = { $gte: from, $lt: to };
+  if (from || to) {
+    if (from && !to) filter["date"] = { $gte: from };
+    if (to && !from) filter["date"] = { $lt: to };
+    if (from && to) filter["date"] = { $gte: from, $lt: to };
   }
 
   // Execute query with pagination
