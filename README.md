@@ -12,4 +12,6 @@ Welcome to Dream Journal REST API!
 
 - start the server with command npm run start
 
+- Postman collection is located in project root directory
+
 Have fun!
