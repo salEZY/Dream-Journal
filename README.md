@@ -14,4 +14,14 @@ Welcome to Dream Journal REST API!
 
 - Postman collection is located in project root directory
 
+## Endpoints
+
+- GET - Get all dream types - /api/dream/get-types
+- GET - Get all dreams - /api/dream/
+- GET - Get one dream - /api/dream/:id
+- GET - Search dreams - /api/dream/search
+- POST - Create a dream - /api/dream/
+- PATCH - Update a dream - /api/dream/:id
+- DELETE - Delete a dream - /api/dream/:id
+
 Have fun!
