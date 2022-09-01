@@ -11,15 +11,16 @@ const middlewares = (app: Express) => {
     logger: log,
     autoLogging: true,
     serializers: {
-      req: (req) => ({
+      req: (req: any) => ({
         method: req.method,
         url: req.url,
       }),
-      res: (res) => ({
+      res: (res: any) => ({
         status: res.statusCode,
       }),
     },
   });
+
   app.use(loggerMiddleware);
 };
 

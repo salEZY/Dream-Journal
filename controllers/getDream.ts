@@ -4,7 +4,7 @@ import { DreamDocument } from "../interfaces/dream.interface";
 import log from "../utils/logger";
 
 const getDream = async (req: Request, res: Response) => {
-  let dream: DreamDocument;
+  let dream: any;
   try {
     dream = await Dream.findById(req.params.id);
   } catch (err) {
