@@ -19,6 +19,24 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get dream types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/get-types",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-types"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
