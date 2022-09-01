@@ -5,10 +5,13 @@ const dreamSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+    minLength: 4,
   },
   description: {
     type: String,
     required: true,
+    minLength: 10,
+    maxLength: 200,
   },
   date: {
     type: Date,
