@@ -1,5 +1,6 @@
 require("dotenv").config();
 import express from "express";
+import routes from "./routes/routes";
 import connectToDB from "./utils/db";
 import log from "./utils/logger";
 
@@ -13,4 +14,6 @@ app.listen(PORT, () => {
   log.info(`Q Agency Books API started on port ${PORT}`);
 
   connectToDB();
+
+  routes(app);
 });
