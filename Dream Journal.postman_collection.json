@@ -26,13 +26,180 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/get-types",
+					"raw": "localhost:8080/api/dream/get-types",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"dream",
 						"get-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Dream",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \" dream 2 delete\",\n    \"description\": \"Test dream\",\n    \"date\": \"2022-03-12T00:00:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/dream/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dream",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get dreams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/dream/?skip=0&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dream",
+						""
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one dream",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit dream",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Updated dream 2\",\n    \"description\": \"This is an updated description for the dream\",\n    \"date\": \"2022-05-05T00:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/dream/631078af2a4402cfad1477bf",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dream",
+						"631078af2a4402cfad1477bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete dream",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/dream/63109cfe6b52386054aa4a27",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dream",
+						"63109cfe6b52386054aa4a27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search dreams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/dream/search?type=happy&skip=0&limit=10&title=upd&from=2022-05-03&to=2022-05-15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dream",
+						"search"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "happy"
+						},
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "title",
+							"value": "upd"
+						},
+						{
+							"key": "from",
+							"value": "2022-05-03"
+						},
+						{
+							"key": "to",
+							"value": "2022-05-15"
+						}
 					]
 				}
 			},
