@@ -6,6 +6,7 @@ import {
   getDreams,
   getDream,
   editDream,
+  deleteDream,
 } from "../controllers/index";
 
 const routes = (app: Express) => {
@@ -26,7 +27,11 @@ const routes = (app: Express) => {
       createDream
     );
 
-  app.route("/api/dream/:id").get(getDream).patch(editDream);
+  app
+    .route("/api/dream/:id")
+    .get(getDream)
+    .patch(editDream)
+    .delete(deleteDream);
 };
 
 export default routes;

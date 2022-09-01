@@ -5,6 +5,7 @@ const dreamSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+    unique: true,
     minLength: 4,
   },
   description: {
