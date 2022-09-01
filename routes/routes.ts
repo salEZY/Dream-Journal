@@ -7,16 +7,22 @@ import {
   getDream,
   editDream,
   deleteDream,
+  searchDreams,
 } from "../controllers/index";
 
 const routes = (app: Express) => {
-  // Health check
+  // GET - Health check
   app.get("/", (req: Request, res: Response) => {
     res.send("Welcome to Dream Journal API!");
   });
 
+  // GET - Dream types
   app.get("/api/dream/get-types", getAllDreamTypes);
 
+  // GET - Search dreams
+  app.get("/api/dream/search", searchDreams);
+
+  // GET - All dreams // POST - Create dream
   app
     .route("/api/dream")
     .get(getDreams)
@@ -27,6 +33,7 @@ const routes = (app: Express) => {
       createDream
     );
 
+  // GET - One dream // PATCH - Edit dream // DELETE - Delete dream
   app
     .route("/api/dream/:id")
     .get(getDream)
