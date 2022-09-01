@@ -1,5 +1,6 @@
 import { Express, Request, Response } from "express";
-import { getAllDreamTypes } from "../controllers/index";
+import { body } from "express-validator";
+import { getAllDreamTypes, createDream } from "../controllers/index";
 
 const routes = (app: Express) => {
   // Health check
@@ -7,7 +8,16 @@ const routes = (app: Express) => {
     res.send("Welcome to Dream Journal API!");
   });
 
-  app.get("/get-types", getAllDreamTypes);
+  app.get("/api/dream/get-types", getAllDreamTypes);
+
+  app
+    .route("/api/dream")
+    .post(
+      body("title").notEmpty().withMessage("Please enter title"),
+      body("description").notEmpty().withMessage("Please enter description"),
+      body("date").notEmpty().withMessage("Please choose date"),
+      createDream
+    );
 };
 
 export default routes;
