@@ -5,6 +5,7 @@ import {
   createDream,
   getDreams,
   getDream,
+  editDream,
 } from "../controllers/index";
 
 const routes = (app: Express) => {
@@ -25,7 +26,7 @@ const routes = (app: Express) => {
       createDream
     );
 
-  app.route("/api/dream/:id").get(getDream);
+  app.route("/api/dream/:id").get(getDream).patch(editDream);
 };
 
 export default routes;
