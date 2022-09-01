@@ -14,7 +14,7 @@ middlewares(app);
 
 // Server start
 app.listen(PORT, () => {
-  log.info(`Q Agency Books API started on port ${PORT}`);
+  log.info(`Dream Journal API started on port ${PORT}`);
 
   // DB connection
   connectToDB();
