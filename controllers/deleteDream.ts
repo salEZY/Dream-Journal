@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import Dream from "../models/dream";
-import { DreamDocument } from "../interfaces/dream.interface";
 
 import log from "../utils/logger";
 
