@@ -10,7 +10,7 @@ const createDream = async (req: Request, res: Response) => {
   }
 
   let dream = await Dream.findOne({ title: req.body.title });
-  if (dream) return res.status(403).json({ message: "Dream already exists" });
+  if (dream) return res.status(403).json({ message: "Dream already exists." });
 
   try {
     dream = await Dream.create(req.body);
@@ -18,7 +18,7 @@ const createDream = async (req: Request, res: Response) => {
     log.error(err.message);
     return res
       .status(500)
-      .json({ message: "Something went wrong with creating dream." });
+      .json({ message: "Something went wrong with creating the dream." });
   }
 
   res.json({ message: "Dream created", dream });
