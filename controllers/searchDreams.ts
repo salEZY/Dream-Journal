@@ -3,7 +3,7 @@ import Dream from "../models/dream";
 
 const searchDreams = async (req: Request, res: Response) => {
   const { skip, limit, title, type, from, to } = req.query;
-  let filter = {};
+  let filter: any = {};
 
   // Generate query
   if (title) {
